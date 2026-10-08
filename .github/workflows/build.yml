@@ -13,6 +13,20 @@ jobs:
     name: Unit tests
     #Run on Ubuntu using the latest version
     runs-on: ubuntu-latest
+    #MySQL container so the Spring context can connect to the database
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: lab1v2026
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
     #Job's steps
     steps:
       #Check-out your repository under $GITHUB_WORKSPACE, so your workflow can access it
@@ -42,6 +56,20 @@ jobs:
 
     permissions:
       contents: read
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: lab1v2026
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
 
     steps:
 
