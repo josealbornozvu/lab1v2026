@@ -13,6 +13,11 @@ jobs:
     name: Unit tests
     #Run on Ubuntu using the latest version
     runs-on: ubuntu-latest
+    #These variables override application.properties inside the pipeline
+    env:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/lab1v2026?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
     #MySQL container so the Spring context can connect to the database
     services:
       mysql:
@@ -56,6 +61,11 @@ jobs:
 
     permissions:
       contents: read
+
+    env:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/lab1v2026?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
 
     services:
       mysql:
