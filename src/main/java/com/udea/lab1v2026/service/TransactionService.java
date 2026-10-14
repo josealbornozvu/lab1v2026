@@ -15,11 +15,8 @@ import java.util.stream.Collectors;
 @Service
 public class TransactionService {
 
-
-    @Autowired
     private TransactionRepository transactionRepository;
 
-    @Autowired
     private CustomerRepository customerRepository; // Para validar cuentas
 
     public TransactionDTO transferMoney(TransactionDTO transactionDTO) {

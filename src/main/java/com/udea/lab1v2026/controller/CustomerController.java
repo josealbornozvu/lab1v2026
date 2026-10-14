@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
-    @Autowired
+
     private CustomerService customerService;
 
     //obtener todos los clientes
