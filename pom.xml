@@ -9,13 +9,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.udea</groupId>
-	<artifactId>lab1v20206</artifactId>
+	<artifactId>lab1v2026</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
 		<java.version>21</java.version>
 		<mapstruct.version>1.5.5.Final</mapstruct.version>
-		<sonar.projectKey>josealbornozvu_lab2v2026</sonar.projectKey>
+		<sonar.projectKey>josealbornozvu_lab1v2026</sonar.projectKey>
+		<sonar.projectName>lab1v2026</sonar.projectName>
 		<sonar.organization>josealbornozvu</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
