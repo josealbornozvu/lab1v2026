@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . .
 
 # Compilar y empaquetar la aplicación
-RUN mvn clean package -DskipTests
+RUN mvn -B clean package -DskipTests
 
 # ==========================================
 # Etapa 2: Ejecución de la aplicación
