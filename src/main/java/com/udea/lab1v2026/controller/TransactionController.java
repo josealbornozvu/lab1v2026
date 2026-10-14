@@ -12,7 +12,11 @@ import java.util.List;
 @RequestMapping(value="/api/transactions", produces = "application/json")
 public class TransactionController {
 
-    private TransactionService transactionService;
+    private final TransactionService transactionService;
+
+    public TransactionController(TransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
 
 
     //STATUS CODES
