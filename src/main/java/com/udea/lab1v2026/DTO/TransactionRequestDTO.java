@@ -5,6 +5,9 @@ public class TransactionRequestDTO {
     private String receiverAccountNumber;
     private Double amount;
 
+    public TransactionRequestDTO() {
+    }
+
     public TransactionRequestDTO(String senderAccountNumber, String receiverAccountNumber, Double amount) {
         this.senderAccountNumber = senderAccountNumber;
         this.receiverAccountNumber = receiverAccountNumber;

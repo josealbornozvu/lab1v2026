@@ -23,6 +23,8 @@ public class Transaction {
     @Column(nullable = false)
     private LocalDateTime timestamp = LocalDateTime.now();
 
+    public Transaction() {
+    }
 
     public Transaction(Long id, String senderAccountNumber, String receiverAccountNumber, Double amount, LocalDateTime timestamp) {
         this.id = id;

@@ -13,6 +13,8 @@ public class TransactionDTO {
     private Double amount;
     private LocalDateTime timestamp;
 
+    public TransactionDTO() {
+    }
 
     public TransactionDTO(Long id, String senderAccountNumber, String receiverAccountNumber, Double amount, LocalDateTime timestamp) {
         this.id = id;
