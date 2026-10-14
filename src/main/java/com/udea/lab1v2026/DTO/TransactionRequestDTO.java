@@ -11,9 +11,6 @@ public class TransactionRequestDTO {
         this.amount = amount;
     }
 
-    public TransactionRequestDTO() {
-    }
-
     public String getSenderAccountNumber() {
         return senderAccountNumber;
     }
