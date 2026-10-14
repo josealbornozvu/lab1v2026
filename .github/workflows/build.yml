@@ -13,6 +13,9 @@ jobs:
     name: Unit tests
     #Run on Ubuntu using the latest version
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab1v2026
     #These variables override application.properties inside the pipeline
     env:
       SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/lab1v2026?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
@@ -58,6 +61,9 @@ jobs:
     name: SonarCloud analysis
     needs: tests
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab1v2026
 
     permissions:
       contents: read
@@ -121,6 +127,9 @@ jobs:
     name: Build
     #Run on Ubuntu using the latest version
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab1v2026
     steps:
       #Check-out your repository under $GITHUB_WORKSPACE, so your workflow can access it
       - uses: actions/checkout@v3
@@ -148,7 +157,7 @@ jobs:
           #Set artifact name
           name: artifact
           #From this path
-          path: target/lab1v2026.jar
+          path: target/target/lab1v2026.jar
 
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@05b44e1dd9e03f78e8689bd1a61c750f17907ffe #v6.11
@@ -156,6 +165,7 @@ jobs:
           image: jalbornozv/lab1v2026
           tags: latest
           registry: docker.io
-          dockerfile: Dockerfile
+          directory: lab1v2026
+          dockerfile: lab1v2026/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
